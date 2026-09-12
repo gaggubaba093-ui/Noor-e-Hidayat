@@ -1,0 +1,1121 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="theme-color" content="#075e54">
+
+<title>मेरा इस्लामी किताबघर</title>
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+
+body{
+font-family:Arial,"Noto Sans Devanagari",sans-serif;
+background:#f3f8f5;
+color:#173b32;
+line-height:1.7
+}
+
+header{
+position:sticky;
+top:0;
+z-index:1000;
+background:linear-gradient(135deg,#064e3b,#07815d);
+color:white;
+padding:18px 12px;
+text-align:center;
+box-shadow:0 4px 15px #0003
+}
+
+header h1{font-size:25px}
+
+nav{
+display:flex;
+gap:7px;
+overflow-x:auto;
+margin-top:12px;
+justify-content:center
+}
+
+nav a{
+color:white;
+text-decoration:none;
+padding:7px 12px;
+border-radius:20px;
+background:#ffffff20;
+white-space:nowrap;
+font-size:13px
+}
+
+nav a:hover{
+background:white;
+color:#075e54
+}
+
+.hero{
+padding:65px 20px;
+text-align:center;
+background:linear-gradient(#e2f6ec,#f5faf7)
+}
+
+.arabic{
+direction:rtl;
+font-family:"Times New Roman",serif;
+font-size:38px;
+color:#087f5b;
+margin:15px 0
+}
+
+.hero h2{
+font-size:35px;
+color:#064e3b
+}
+
+.hero p{
+max-width:750px;
+margin:10px auto;
+color:#536b63
+}
+
+.btn{
+display:inline-block;
+margin:15px 5px;
+padding:11px 20px;
+border-radius:25px;
+background:#087f5b;
+color:white;
+text-decoration:none;
+border:0;
+cursor:pointer;
+font-weight:bold
+}
+
+section{
+max-width:1150px;
+margin:auto;
+padding:50px 16px
+}
+
+.title{
+text-align:center;
+font-size:30px;
+color:#064e3b;
+margin-bottom:8px
+}
+
+.desc{
+text-align:center;
+color:#667a73;
+margin-bottom:25px
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:18px
+}
+
+.card{
+background:white;
+padding:22px;
+border-radius:17px;
+box-shadow:0 5px 18px #0000000d;
+border:1px solid #dfece6
+}
+
+.card h3{
+color:#07634f;
+margin-bottom:7px
+}
+
+.card p{color:#586d66;font-size:14px}
+
+.icon{font-size:34px}
+
+.book{
+background:#eaf7f0;
+max-width:none
+}
+
+.book-inner{
+max-width:1150px;
+margin:auto
+}
+
+.lesson{
+background:white;
+border-radius:14px;
+margin:12px 0;
+overflow:hidden;
+border:1px solid #dce9e4
+}
+
+.lesson button{
+width:100%;
+padding:17px;
+background:white;
+border:0;
+text-align:right;
+font-size:16px;
+font-weight:bold;
+color:#075e54;
+cursor:pointer
+}
+
+.lesson-content{
+display:none;
+padding:0 18px 18px
+}
+
+.lesson.active .lesson-content{
+display:block
+}
+
+.search{
+max-width:650px;
+margin:20px auto
+}
+
+.search input,
+select{
+width:100%;
+padding:14px;
+border:2px solid #cfe2d9;
+border-radius:28px;
+font-size:15px;
+outline:none;
+background:white
+}
+
+select{
+border-radius:10px;
+margin-top:10px
+}
+
+.quran-panel{
+background:white;
+border-radius:18px;
+padding:20px;
+box-shadow:0 5px 20px #0001
+}
+
+.quran-head{
+text-align:center;
+border-bottom:1px solid #ddd;
+padding-bottom:15px;
+margin-bottom:15px
+}
+
+.quran-head h2{
+color:#075e54
+}
+
+.ayah{
+padding:20px 8px;
+border-bottom:1px solid #e3e9e6
+}
+
+.ayah-number{
+font-size:13px;
+color:#087f5b;
+font-weight:bold
+}
+
+.ayah-arabic{
+direction:rtl;
+text-align:right;
+font-family:"Times New Roman",serif;
+font-size:29px;
+line-height:2.1;
+margin:8px 0
+}
+
+.ayah button{
+border:0;
+background:#087f5b;
+color:white;
+border-radius:20px;
+padding:7px 13px;
+cursor:pointer
+}
+
+audio{
+width:100%;
+margin-top:10px
+}
+
+.loading{
+text-align:center;
+padding:30px;
+color:#087f5b
+}
+
+.notice{
+background:#fff8dc;
+border-left:5px solid #d6a500;
+padding:17px;
+border-radius:10px;
+margin:18px 0
+}
+
+.dua{
+background:white;
+padding:20px;
+border-radius:15px;
+margin:14px 0;
+box-shadow:0 4px 15px #0000000b
+}
+
+.dua-arabic{
+direction:rtl;
+text-align:right;
+font-family:"Times New Roman",serif;
+font-size:27px;
+margin:12px 0
+}
+
+footer{
+background:#063f33;
+color:white;
+padding:35px 15px;
+text-align:center
+}
+
+.top{
+position:fixed;
+bottom:18px;
+right:18px;
+display:none;
+width:45px;
+height:45px;
+border:0;
+border-radius:50%;
+background:#087f5b;
+color:white;
+font-size:20px;
+cursor:pointer
+}
+
+@media(max-width:600px){
+.hero h2{font-size:28px}
+.arabic{font-size:30px}
+.title{font-size:25px}
+.ayah-arabic{font-size:25px}
+nav{justify-content:flex-start}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+<h1>📖 मेरा इस्लामी किताबघर</h1>
+<p>कुरआन • हदीस • कलिमा • नमाज़ • दुआ • इस्लामी शिक्षा</p>
+
+<nav>
+<a href="#home">होम</a>
+<a href="#quran">📖 कुरआन</a>
+<a href="#kalima">☪️ कलिमा</a>
+<a href="#hadith">📚 हदीस</a>
+<a href="#allah">☝️ अल्लाह</a>
+<a href="#namaz">🕋 नमाज़</a>
+<a href="#wuzu">💧 वुज़ू</a>
+<a href="#dua">🤲 दुआ</a>
+<a href="#women">👩 औरत</a>
+<a href="#children">👦 बच्चे</a>
+</nav>
+
+</header>
+
+
+<!-- HOME -->
+
+<div class="hero" id="home">
+
+<div class="arabic">
+بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ
+</div>
+
+<h2>इस्लामी इल्म का डिजिटल किताबघर</h2>
+
+<p>
+कुरआन करीम, तिलावत, कलिमा, हदीस, नमाज़,
+वुज़ू, दुआएँ और रोज़मर्रा की इस्लामी शिक्षा।
+</p>
+
+<a href="#quran" class="btn">📖 कुरआन पढ़ें</a>
+<a href="#hadith" class="btn">📚 हदीस पढ़ें</a>
+
+</div>
+
+
+<!-- BASIC -->
+
+<section>
+
+<h2 class="title">☪️ इस्लाम की बुनियादी बातें</h2>
+
+<p class="desc">
+दीन की जरूरी जानकारी एक जगह।
+</p>
+
+<div class="grid">
+
+<div class="card">
+<div class="icon">☝️</div>
+<h3>तौहीद</h3>
+<p>अल्लाह को एक मानना और केवल उसी की इबादत करना।</p>
+</div>
+
+<div class="card">
+<div class="icon">❤️</div>
+<h3>ईमान</h3>
+<p>अल्लाह, फरिश्तों, किताबों, रसूलों, आख़िरत और तक़दीर पर ईमान।</p>
+</div>
+
+<div class="card">
+<div class="icon">🕋</div>
+<h3>इबादत</h3>
+<p>नमाज़, रोज़ा, ज़कात, हज और नेक काम।</p>
+</div>
+
+<div class="card">
+<div class="icon">🤲</div>
+<h3>अख़लाक़</h3>
+<p>सच्चाई, सब्र, रहम और लोगों के साथ अच्छा व्यवहार।</p>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ALLAH -->
+
+<section id="allah" class="book">
+
+<div class="book-inner">
+
+<h2 class="title">☝️ अल्लाह</h2>
+
+<div class="lesson active">
+
+<button onclick="toggle(this)">
+अल्लाह की एकता
+</button>
+
+<div class="lesson-content">
+
+<div class="arabic-box">
+</div>
+
+<p>
+इस्लाम की बुनियादी शिक्षा में अल्लाह की तौहीद सबसे महत्वपूर्ण
+अकीदों में से है। मुसलमान केवल अल्लाह को इबादत के योग्य मानता है।
+</p>
+
+</div>
+</div>
+
+<div class="lesson">
+
+<button onclick="toggle(this)">
+अल्लाह के प्रति हमारी जिम्मेदारियाँ
+</button>
+
+<div class="lesson-content">
+
+<ul>
+<li>अल्लाह की इबादत करना।</li>
+<li>उसके साथ किसी को शरीक न करना।</li>
+<li>उसका शुक्र अदा करना।</li>
+<li>उसकी नाफरमानी से बचना।</li>
+<li>नेक काम करना।</li>
+</ul>
+
+</div>
+</div>
+
+</div>
+</section>
+
+
+<!-- QURAN -->
+
+<section id="quran">
+
+<h2 class="title">📖 पूरा कुरआन करीम</h2>
+
+<p class="desc">
+114 सूरह • अरबी टेक्स्ट • तिलावत • सूरह चयन
+</p>
+
+<div class="notice">
+<strong>कुरआन:</strong>
+नीचे पूरा कुरआन ऑनलाइन लोड होगा। वेबसाइट में इंटरनेट चालू होना जरूरी है।
+</div>
+
+<div class="search">
+
+<select id="surahSelect">
+<option value="">सूरह चुनें...</option>
+</select>
+
+</div>
+
+<div class="quran-panel">
+
+<div id="quranTitle" class="quran-head">
+<h2>सूरह चुनें</h2>
+<p>सूरह चुनने के बाद पूरा टेक्स्ट और तिलावत दिखाई जाएगी।</p>
+</div>
+
+<div id="quranContent">
+<div class="loading">
+📖 कुरआन लोड करने के लिए सूरह चुनें।
+</div>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- KALIMA -->
+
+<section id="kalima" class="book">
+
+<div class="book-inner">
+
+<h2 class="title">☪️ पूरे कलिमे</h2>
+
+<div class="dua">
+
+<h3>1. कलिमा तैय्यिबा</h3>
+
+<div class="dua-arabic">
+لَا إِلٰهَ إِلَّا اللّٰهُ مُحَمَّدٌ رَّسُولُ اللّٰهِ
+</div>
+
+<p>
+अर्थ: अल्लाह के सिवा कोई इबादत के योग्य नहीं और मुहम्मद ﷺ
+अल्लाह के रसूल हैं।
+</p>
+
+</div>
+
+
+<div class="dua">
+
+<h3>2. कलिमा शहादत</h3>
+
+<div class="dua-arabic">
+أَشْهَدُ أَنْ لَا إِلٰهَ إِلَّا اللّٰهُ وَحْدَهُ لَا شَرِيكَ لَهُ
+وَأَشْهَدُ أَنَّ مُحَمَّدًا عَبْدُهُ وَرَسُولُهُ
+</div>
+
+</div>
+
+
+<div class="dua">
+
+<h3>3. कलिमा तमजीद</h3>
+
+<div class="dua-arabic">
+سُبْحَانَ اللّٰهِ وَالْحَمْدُ لِلّٰهِ
+وَلَا إِلٰهَ إِلَّا اللّٰهُ وَاللّٰهُ أَكْبَرُ
+</div>
+
+</div>
+
+
+<div class="dua">
+
+<h3>4. कलिमा तौहीद</h3>
+
+<div class="dua-arabic">
+لَا إِلٰهَ إِلَّا اللّٰهُ وَحْدَهُ لَا شَرِيكَ لَهُ
+</div>
+
+</div>
+
+
+<div class="dua">
+
+<h3>5. कलिमा इस्तिग़फ़ार</h3>
+
+<div class="dua-arabic">
+أَسْتَغْفِرُ اللّٰهَ رَبِّي مِنْ كُلِّ ذَنْبٍ أَذْنَبْتُهُ عَمَدًا أَوْ خَطَأً
+</div>
+
+</div>
+
+
+<div class="dua">
+
+<h3>6. कलिमा रद्दे कुफ्र</h3>
+
+<div class="dua-arabic">
+اللّٰهُمَّ إِنِّي أَعُوذُ بِكَ مِنْ أَنْ أُشْرِكَ بِكَ شَيْئًا
+أَعْلَمُهُ وَأَسْتَغْفِرُكَ لِمَا لَا أَعْلَمُهُ
+</div>
+
+</div>
+
+</div>
+</section>
+
+
+<!-- HADITH -->
+
+<section id="hadith">
+
+<h2 class="title">📚 हदीस</h2>
+
+<p class="desc">
+प्रमाणित हदीस की किताबों तक पहुँच।
+</p>
+
+<div class="grid">
+
+<div class="card">
+<h3>सहीह अल-बुखारी</h3>
+<p>
+नबी ﷺ की हदीसों का प्रमुख संग्रह।
+</p>
+
+<a
+class="btn"
+target="_blank"
+href="https://sunnah.com/bukhari">
+हदीस खोलें
+</a>
+
+</div>
+
+
+<div class="card">
+<h3>सहीह मुस्लिम</h3>
+<p>
+हदीस का प्रसिद्ध और महत्वपूर्ण संग्रह।
+</p>
+
+<a
+class="btn"
+target="_blank"
+href="https://sunnah.com/muslim">
+हदीस खोलें
+</a>
+
+</div>
+
+
+<div class="card">
+<h3>सुनन अबू दाऊद</h3>
+
+<a
+class="btn"
+target="_blank"
+href="https://sunnah.com/abudawud">
+हदीस खोलें
+</a>
+
+</div>
+
+
+<div class="card">
+
+<h3>जामे अत-तिर्मिज़ी</h3>
+
+<a
+class="btn"
+target="_blank"
+href="https://sunnah.com/tirmidhi">
+हदीस खोलें
+</a>
+
+</div>
+
+
+<div class="card">
+
+<h3>सुनन अन-नसाई</h3>
+
+<a
+class="btn"
+target="_blank"
+href="https://sunnah.com/nasai">
+हदीस खोलें
+</a>
+
+</div>
+
+
+<div class="card">
+
+<h3>सुनन इब्न माजा</h3>
+
+<a
+class="btn"
+target="_blank"
+href="https://sunnah.com/ibnmajah">
+हदीस खोलें
+</a>
+
+</div>
+
+</div>
+
+<div class="notice">
+हदीस का अरबी/अनुवाद अपनी वेबसाइट में प्रकाशित करने से पहले
+स्रोत और अनुवाद के अधिकार/लाइसेंस की जाँच करें।
+</div>
+
+</section>
+
+
+<!-- NAMAZ -->
+
+<section id="namaz" class="book">
+
+<div class="book-inner">
+
+<h2 class="title">🕋 नमाज़</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>फ़ज्र</h3>
+<p>सुबह की नमाज़।</p>
+</div>
+
+<div class="card">
+<h3>ज़ुहर</h3>
+<p>दोपहर की नमाज़।</p>
+</div>
+
+<div class="card">
+<h3>असर</h3>
+<p>असर की नमाज़।</p>
+</div>
+
+<div class="card">
+<h3>मग़रिब</h3>
+<p>सूरज डूबने के बाद की नमाज़।</p>
+</div>
+
+<div class="card">
+<h3>इशा</h3>
+<p>रात की नमाज़।</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- WUZU -->
+
+<section id="wuzu">
+
+<h2 class="title">💧 वुज़ू</h2>
+
+<div class="grid">
+
+<div class="card"><h3>1. हाथ</h3><p>हाथ धोना।</p></div>
+<div class="card"><h3>2. कुल्ली</h3><p>मुँह साफ करना।</p></div>
+<div class="card"><h3>3. नाक</h3><p>नाक साफ करना।</p></div>
+<div class="card"><h3>4. चेहरा</h3><p>चेहरा धोना।</p></div>
+<div class="card"><h3>5. बाज़ू</h3><p>कोहनियों सहित धोना।</p></div>
+<div class="card"><h3>6. मसह</h3><p>सिर का मसह करना।</p></div>
+<div class="card"><h3>7. पैर</h3><p>टखनों सहित पैर धोना।</p></div>
+
+</div>
+
+</section>
+
+
+<!-- DUA -->
+
+<section id="dua" class="book">
+
+<div class="book-inner">
+
+<h2 class="title">🤲 मस्नून दुआएँ</h2>
+
+<div class="dua">
+
+<h3>खाने से पहले</h3>
+
+<div class="dua-arabic">
+بِسْمِ اللّٰهِ
+</div>
+
+</div>
+
+
+<div class="dua">
+
+<h3>माता-पिता के लिए दुआ</h3>
+
+<div class="dua-arabic">
+رَبِّ ارْحَمْهُمَا كَمَا رَبَّيَانِي صَغِيرًا
+</div>
+
+</div>
+
+
+<div class="dua">
+
+<h3>कुरआन की दुआ</h3>
+
+<div class="dua-arabic">
+رَبَّنَا آتِنَا فِي الدُّنْيَا حَسَنَةً
+وَفِي الْآخِرَةِ حَسَنَةً وَقِنَا عَذَابَ النَّارِ
+</div>
+
+</div>
+
+</div>
+</section>
+
+
+<!-- WOMEN -->
+
+<section id="women">
+
+<h2 class="title">👩 मुस्लिम औरत</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>इबादत</h3>
+<p>इबादत और नेक कामों की शिक्षा।</p>
+</div>
+
+<div class="card">
+<h3>पाकीज़गी</h3>
+<p>तहारत और वुज़ू के मसाइल।</p>
+</div>
+
+<div class="card">
+<h3>हया</h3>
+<p>शालीनता और अच्छे अख़लाक़।</p>
+</div>
+
+<div class="card">
+<h3>परिवार</h3>
+<p>परिवार के अधिकार और जिम्मेदारियाँ।</p>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- CHILDREN -->
+
+<section id="children" class="book">
+
+<div class="book-inner">
+
+<h2 class="title">👦 बच्चों की इस्लामी शिक्षा</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>अल्लाह कौन है?</h3>
+<p>बच्चों को तौहीद की बुनियादी शिक्षा।</p>
+</div>
+
+<div class="card">
+<h3>कलिमा</h3>
+<p>कलिमा सही उच्चारण और अर्थ के साथ।</p>
+</div>
+
+<div class="card">
+<h3>नमाज़</h3>
+<p>नमाज़ और वुज़ू की बुनियादी जानकारी।</p>
+</div>
+
+<div class="card">
+<h3>दुआ</h3>
+<p>रोज़मर्रा की प्रमाणित दुआएँ।</p>
+</div>
+
+<div class="card">
+<h3>अच्छे अख़लाक़</h3>
+<p>सच बोलना, सब्र और बड़ों का सम्मान।</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<footer>
+
+<h2>📖 मेरा इस्लामी किताबघर</h2>
+
+<p>
+अल्लाह हमें सही इल्म सीखने और उस पर अमल करने की तौफ़ीक़ दे। आमीन।
+</p>
+
+<br>
+
+<p>© 2026 Islamic Knowledge</p>
+
+</footer>
+
+
+<button class="top" id="top">↑</button>
+
+
+<script>
+
+/* =========================
+   QURAN SYSTEM
+========================= */
+
+const API =
+"https://api.alquran.cloud/v1";
+
+const AUDIO =
+"https://cdn.islamic.network/quran/audio/128/ar.alafasy";
+
+
+const select =
+document.getElementById("surahSelect");
+
+const quranContent =
+document.getElementById("quranContent");
+
+const quranTitle =
+document.getElementById("quranTitle");
+
+
+/* LOAD 114 SURAHS */
+
+async function loadSurahs(){
+
+try{
+
+const response =
+await fetch(API + "/surah");
+
+const json =
+await response.json();
+
+json.data.forEach(surah=>{
+
+const option =
+document.createElement("option");
+
+option.value =
+surah.number;
+
+option.textContent =
+surah.number +
+". " +
+surah.name +
+" — " +
+surah.englishName;
+
+select.appendChild(option);
+
+});
+
+}catch(error){
+
+quranContent.innerHTML =
+'<div class="notice">कुरआन लोड नहीं हो पाया। इंटरनेट कनेक्शन जाँचें।</div>';
+
+}
+
+}
+
+
+/* LOAD COMPLETE SURAH */
+
+async function loadSurah(number){
+
+quranContent.innerHTML =
+'<div class="loading">📖 सूरह लोड हो रही है...</div>';
+
+try{
+
+const response =
+await fetch(
+API + "/surah/" + number + "/ar.alafasy"
+);
+
+const json =
+await response.json();
+
+const surah =
+json.data;
+
+quranTitle.innerHTML =
+
+"<h2>" +
+surah.number +
+". " +
+surah.name +
+"</h2>" +
+
+"<p>" +
+surah.englishName +
+" • " +
+surah.englishNameTranslation +
+" • " +
+surah.numberOfAyahs +
+" आयत</p>";
+
+
+let html="";
+
+surah.ayahs.forEach(ayah=>{
+
+const audioURL =
+AUDIO + "/" + ayah.number + ".mp3";
+
+html += `
+
+<div class="ayah">
+
+<div class="ayah-number">
+आयत ${ayah.numberInSurah}
+</div>
+
+<div class="ayah-arabic">
+${ayah.text}
+</div>
+
+<button onclick="playAyah('${audioURL}')">
+▶️ तिलावत
+</button>
+
+<audio
+id="audio-${ayah.number}"
+controls
+preload="none"
+src="${audioURL}">
+</audio>
+
+</div>
+
+`;
+
+});
+
+quranContent.innerHTML = html;
+
+window.scrollTo({
+top:quranContent.offsetTop-100,
+behavior:"smooth"
+});
+
+}catch(error){
+
+quranContent.innerHTML =
+'<div class="notice">सूरह लोड करने में समस्या हुई। फिर से कोशिश करें।</div>';
+
+}
+
+}
+
+
+/* PLAY AYAH */
+
+function playAyah(url){
+
+const audio =
+document.createElement("audio");
+
+audio.src=url;
+
+audio.controls=true;
+
+audio.autoplay=true;
+
+audio.style.width="100%";
+
+document.querySelector(".quran-panel")
+.prepend(audio);
+
+audio.play();
+
+}
+
+
+/* SURAH CHANGE */
+
+select.addEventListener(
+"change",
+function(){
+
+if(this.value){
+loadSurah(this.value);
+}
+
+});
+
+
+/* LOAD SURAH LIST */
+
+loadSurahs();
+
+
+/* =========================
+   LESSON ACCORDION
+========================= */
+
+function toggle(button){
+
+const lesson =
+button.parentElement;
+
+lesson.classList.toggle("active");
+
+}
+
+
+/* =========================
+   TOP BUTTON
+========================= */
+
+const topButton =
+document.getElementById("top");
+
+window.addEventListener(
+"scroll",
+function(){
+
+if(window.scrollY>400){
+topButton.style.display="block";
+}else{
+topButton.style.display="none";
+}
+
+});
+
+
+topButton.onclick=function(){
+
+window.scrollTo({
+top:0,
+behavior:"smooth"
+});
+
+};
+
+</script>
+
+</body>
+</html>
