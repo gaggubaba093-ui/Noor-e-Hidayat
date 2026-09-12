@@ -1,0 +1,1721 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+<title>नूर-ए-हिदायत | Quran • Hadith • Dua • Qaida</title>
+
+<style>
+
+*{
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+margin:0;
+background:#03150f;
+color:#f4f1df;
+font-family:Arial,"Noto Sans Devanagari",sans-serif;
+}
+
+header{
+background:#041d14;
+border-bottom:1px solid #315746;
+padding:18px 22px;
+position:sticky;
+top:0;
+z-index:100;
+}
+
+.header-inner{
+max-width:1200px;
+margin:auto;
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:20px;
+}
+
+.logo{
+font-size:25px;
+font-weight:bold;
+color:#dfc15c;
+line-height:1.3;
+}
+
+.top-links{
+font-size:17px;
+color:#c9d0ca;
+}
+
+.top-links span{
+margin:0 8px;
+}
+
+main{
+max-width:1200px;
+margin:auto;
+padding:20px;
+}
+
+.hero{
+min-height:400px;
+border:1px solid #315d49;
+border-radius:35px;
+background:
+radial-gradient(circle at 50% 20%,#174d37,#061b12 65%);
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:30px;
+}
+
+.hero-arabic{
+font-size:55px;
+direction:rtl;
+margin-bottom:20px;
+}
+
+.hero-title{
+font-size:38px;
+color:#dfc15c;
+font-weight:bold;
+}
+
+.hero-sub{
+font-size:22px;
+color:#b9c4bc;
+line-height:1.7;
+margin-top:20px;
+}
+
+.tabs{
+display:flex;
+gap:12px;
+overflow-x:auto;
+padding:20px 0 12px;
+scrollbar-width:thin;
+}
+
+.tab{
+flex:0 0 auto;
+background:#0c3023;
+border:1px solid #315d49;
+color:#fff;
+border-radius:16px;
+padding:14px 20px;
+font-size:17px;
+cursor:pointer;
+}
+
+.tab:hover,
+.tab.active{
+background:#e1c15a;
+color:#111;
+}
+
+.section{
+margin-top:20px;
+}
+
+.card{
+background:#08251a;
+border:1px solid #315d49;
+border-radius:24px;
+padding:22px;
+margin-bottom:20px;
+}
+
+h1,h2,h3{
+margin-top:0;
+}
+
+h2{
+font-size:30px;
+color:#f0da83;
+}
+
+h3{
+color:#e5cc6a;
+}
+
+p{
+font-size:18px;
+line-height:1.8;
+color:#c6d0c9;
+}
+
+.juz-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(145px,1fr));
+gap:12px;
+}
+
+.juz-card{
+background:#0d3627;
+border:1px solid #376b54;
+border-radius:18px;
+padding:15px;
+text-align:center;
+}
+
+.juz-card strong{
+display:block;
+font-size:22px;
+color:#f0d36e;
+margin-bottom:8px;
+}
+
+.juz-card small{
+display:block;
+color:#b8c7be;
+margin-bottom:10px;
+min-height:35px;
+}
+
+button{
+border:0;
+border-radius:11px;
+padding:11px 15px;
+margin:4px;
+font-weight:bold;
+cursor:pointer;
+background:#dfbd51;
+color:#111;
+font-size:14px;
+}
+
+button:hover{
+opacity:.85;
+}
+
+.btn-green{
+background:#1d654b;
+color:white;
+}
+
+.btn-red{
+background:#9d3434;
+color:white;
+}
+
+.btn-blue{
+background:#285c82;
+color:white;
+}
+
+.reader{
+margin-top:20px;
+}
+
+.ayah{
+background:#061b13;
+border:1px solid #285542;
+border-radius:20px;
+padding:20px;
+margin:15px 0;
+}
+
+.ayah-number{
+color:#d8bb55;
+font-weight:bold;
+margin-bottom:10px;
+}
+
+.arabic{
+direction:rtl;
+text-align:right;
+font-size:31px;
+line-height:2.2;
+color:#fff8d8;
+font-family:"Noto Naskh Arabic","Amiri",serif;
+}
+
+.hindi{
+font-size:18px;
+line-height:1.9;
+margin-top:15px;
+color:#e0e8e2;
+}
+
+.english{
+font-size:16px;
+line-height:1.8;
+margin-top:10px;
+color:#9eb4a8;
+}
+
+.surah-list{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:12px;
+}
+
+.surah-card{
+background:#0d3627;
+border:1px solid #376b54;
+border-radius:17px;
+padding:15px;
+}
+
+.surah-name{
+font-size:19px;
+font-weight:bold;
+color:#f0d36e;
+}
+
+.surah-arabic{
+font-size:24px;
+direction:rtl;
+margin:7px 0;
+}
+
+.search-box{
+display:flex;
+gap:8px;
+}
+
+.search-box input{
+flex:1;
+}
+
+input,select{
+width:100%;
+background:#03150f;
+color:white;
+border:1px solid #426a58;
+border-radius:12px;
+padding:14px;
+font-size:16px;
+outline:none;
+}
+
+audio{
+width:100%;
+margin-top:10px;
+}
+
+.player{
+position:fixed;
+bottom:10px;
+left:50%;
+transform:translateX(-50%);
+width:min(700px,calc(100% - 20px));
+background:#071e15;
+border:1px solid #5a765f;
+border-radius:18px;
+padding:14px;
+z-index:999;
+box-shadow:0 10px 35px #000b;
+}
+
+.player-title{
+color:#e7ce6b;
+font-weight:bold;
+margin-bottom:7px;
+}
+
+.player-buttons{
+display:flex;
+flex-wrap:wrap;
+gap:5px;
+}
+
+.loading{
+padding:25px;
+text-align:center;
+color:#d9c56b;
+font-size:18px;
+}
+
+.dua{
+background:#0b3022;
+border:1px solid #315d49;
+border-radius:18px;
+padding:18px;
+margin:12px 0;
+}
+
+.dua .arabic{
+font-size:29px;
+}
+
+.kalima{
+background:#0b3022;
+border:1px solid #315d49;
+border-radius:18px;
+padding:18px;
+margin:12px 0;
+}
+
+.footer{
+border-top:1px solid #254737;
+margin-top:80px;
+padding:40px 20px;
+text-align:center;
+color:#899f95;
+}
+
+.hidden{
+display:none!important;
+}
+
+@media(max-width:600px){
+
+header{
+padding:14px;
+}
+
+.header-inner{
+align-items:flex-start;
+}
+
+.logo{
+font-size:21px;
+}
+
+.top-links{
+font-size:14px;
+line-height:1.6;
+}
+
+main{
+padding:12px;
+}
+
+.hero{
+min-height:330px;
+border-radius:25px;
+}
+
+.hero-arabic{
+font-size:38px;
+}
+
+.hero-title{
+font-size:30px;
+}
+
+.hero-sub{
+font-size:18px;
+}
+
+h2{
+font-size:25px;
+}
+
+.arabic{
+font-size:26px;
+}
+
+.juz-grid{
+grid-template-columns:repeat(2,1fr);
+}
+
+.juz-card{
+padding:11px 5px;
+}
+
+.juz-card button{
+width:calc(100% - 8px);
+}
+
+.search-box{
+flex-direction:column;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="header-inner">
+
+<div class="logo">
+☪ नूर-ए-हिदायत
+</div>
+
+<div class="top-links">
+Quran <span>•</span>
+Hadith <span>•</span>
+Dua <span>•</span>
+Qaida
+</div>
+
+</div>
+
+</header>
+
+
+<main>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="hero-arabic">
+الْقُرْآنُ الْكَرِيمُ
+</div>
+
+<div class="hero-title">
+नूर-ए-हिदायत
+</div>
+
+<div class="hero-sub">
+पूरा कुरआन • 30 पारा • सूरह • तिलावत •<br>
+इस्लामी शिक्षा
+</div>
+
+</section>
+
+
+<!-- TABS -->
+
+<div class="tabs">
+
+<button class="tab active" onclick="openSection('home',this)">
+🏠 Home
+</button>
+
+<button class="tab" onclick="openSection('quran',this)">
+📖 कुरआन
+</button>
+
+<button class="tab" onclick="openSection('juz',this)">
+📚 30 पारा
+</button>
+
+<button class="tab" onclick="openSection('surah',this)">
+🕌 सूरह
+</button>
+
+<button class="tab" onclick="openSection('kalima',this)">
+☪ कलिमा
+</button>
+
+<button class="tab" onclick="openSection('dua',this)">
+🤲 दुआ
+</button>
+
+<button class="tab" onclick="openSection('namaz',this)">
+🕋 नमाज़
+</button>
+
+</div>
+
+
+<!-- HOME -->
+
+<section id="home" class="section">
+
+<div class="card">
+
+<h2>📖 कुरआन करीम</h2>
+
+<p>
+यहाँ पूरा Quran पढ़ें, Surah पढ़ें और Tilawat सुनें।
+30 पारे अलग-अलग दिए गए हैं।
+</p>
+
+<button onclick="openSection('juz')">
+📚 30 पारा खोलें
+</button>
+
+<button onclick="openSection('surah')">
+🕌 114 सूरह देखें
+</button>
+
+</div>
+
+
+<div class="card">
+
+<h2>🔎 कुरआन में खोजें</h2>
+
+<div class="search-box">
+
+<input
+id="searchInput"
+placeholder="कोई शब्द लिखें..."
+>
+
+<button onclick="searchQuran()">
+🔍 Search
+</button>
+
+</div>
+
+<div id="searchResults"></div>
+
+</div>
+
+</section>
+
+
+<!-- QURAN -->
+
+<section id="quran" class="section hidden">
+
+<div class="card">
+
+<h2>📖 कुरआन पढ़ें</h2>
+
+<p>
+Surah चुनिए। Arabic के साथ Hindi और English translation भी दिखाई जाएगी।
+</p>
+
+<select id="surahSelect" onchange="loadSurah(this.value)">
+<option value="">-- सूरह चुनें --</option>
+</select>
+
+</div>
+
+<div id="quranReader"></div>
+
+</section>
+
+
+<!-- JUZ -->
+
+<section id="juz" class="section hidden">
+
+<div class="card">
+
+<h2>📚 कुरआन के 30 पारे</h2>
+
+<p>
+किसी भी पारे पर जाएँ। <b>▶ पूरा पारा सुनें</b> दबाने पर
+उस पारे की सभी आयतें अपने-आप क्रम से चलेंगी।
+</p>
+
+<div id="juzGrid" class="juz-grid"></div>
+
+</div>
+
+<div id="juzReader"></div>
+
+</section>
+
+
+<!-- SURAH -->
+
+<section id="surah" class="section hidden">
+
+<div class="card">
+
+<h2>🕌 114 सूरह</h2>
+
+<input
+id="surahSearch"
+placeholder="Surah का नाम या नंबर खोजें..."
+oninput="filterSurahs()"
+>
+
+</div>
+
+<div id="surahList" class="surah-list"></div>
+
+</section>
+
+
+<!-- KALIMA -->
+
+<section id="kalima" class="section hidden">
+
+<div class="card">
+
+<h2>☪ छः कलिमा</h2>
+
+
+<div class="kalima">
+
+<h3>1. कलिमा तैय्यबा</h3>
+
+<div class="arabic">
+لَا إِلٰهَ إِلَّا اللّٰهُ مُحَمَّدٌ رَّسُولُ اللّٰهِ
+</div>
+
+<p>
+अल्लाह के सिवा कोई इबादत के लायक नहीं,
+मुहम्मद ﷺ अल्लाह के रसूल हैं।
+</p>
+
+</div>
+
+
+<div class="kalima">
+
+<h3>2. कलिमा शहादत</h3>
+
+<div class="arabic">
+أَشْهَدُ أَنْ لَا إِلٰهَ إِلَّا اللّٰهُ وَحْدَهُ لَا شَرِيكَ لَهُ وَأَشْهَدُ أَنَّ مُحَمَّدًا عَبْدُهُ وَرَسُولُهُ
+</div>
+
+</div>
+
+
+<div class="kalima">
+
+<h3>3. कलिमा तमजीद</h3>
+
+<div class="arabic">
+سُبْحَانَ اللّٰهِ وَالْحَمْدُ لِلّٰهِ وَلَا إِلٰهَ إِلَّا اللّٰهُ وَاللّٰهُ أَكْبَرُ
+</div>
+
+</div>
+
+
+<div class="kalima">
+
+<h3>4. कलिमा तौहीद</h3>
+
+<div class="arabic">
+لَا إِلٰهَ إِلَّا اللّٰهُ وَحْدَهُ لَا شَرِيكَ لَهُ
+</div>
+
+</div>
+
+
+<div class="kalima">
+
+<h3>5. कलिमा इस्तिग़फार</h3>
+
+<div class="arabic">
+أَسْتَغْفِرُ اللّٰهَ رَبِّي مِنْ كُلِّ ذَنْبٍ أَذْنَبْتُهُ
+</div>
+
+</div>
+
+
+<div class="kalima">
+
+<h3>6. कलिमा रद्दे कुफ्र</h3>
+
+<div class="arabic">
+اللّٰهُمَّ إِنِّي أَعُوذُ بِكَ مِنْ أَنْ أُشْرِكَ بِكَ شَيْئًا أَعْلَمُهُ وَأَسْتَغْفِرُكَ لِمَا لَا أَعْلَمُهُ
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- DUA -->
+
+<section id="dua" class="section hidden">
+
+<div class="card">
+
+<h2>🤲 रोज़मर्रा की दुआएँ</h2>
+
+
+<div class="dua">
+
+<h3>सोने की दुआ</h3>
+
+<div class="arabic">
+بِاسْمِكَ اللَّهُمَّ أَمُوتُ وَأَحْيَا
+</div>
+
+<p>
+ऐ अल्लाह! तेरे ही नाम के साथ मैं मरता और जीता हूँ।
+</p>
+
+</div>
+
+
+<div class="dua">
+
+<h3>इल्म की दुआ</h3>
+
+<div class="arabic">
+رَبِّ زِدْنِي عِلْمًا
+</div>
+
+<p>
+ऐ मेरे रब! मेरे ज्ञान में वृद्धि कर।
+</p>
+
+</div>
+
+
+<div class="dua">
+
+<h3>दुनिया और आखिरत की भलाई</h3>
+
+<div class="arabic">
+رَبَّنَا آتِنَا فِي الدُّنْيَا حَسَنَةً وَفِي الْآخِرَةِ حَسَنَةً وَقِنَا عَذَابَ النَّارِ
+</div>
+
+</div>
+
+
+<div class="dua">
+
+<h3>घर से निकलने की दुआ</h3>
+
+<div class="arabic">
+بِسْمِ اللَّهِ تَوَكَّلْتُ عَلَى اللَّهِ لَا حَوْلَ وَلَا قُوَّةَ إِلَّا بِاللَّهِ
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- NAMAZ -->
+
+<section id="namaz" class="section hidden">
+
+<div class="card">
+
+<h2>🕋 नमाज़</h2>
+
+<h3>5 वक्त की नमाज़</h3>
+
+<p>
+🌅 Fajr<br>
+☀️ Zuhr<br>
+🌤️ Asr<br>
+🌇 Maghrib<br>
+🌙 Isha
+</p>
+
+<h3>नमाज़ के मुख्य चरण</h3>
+
+<p>
+नियत → तकबीर → क़ियाम → रुकू →
+क़ौमा → सजदा → जलसा → सजदा →
+क़ायदा → सलाम
+</p>
+
+</div>
+
+</section>
+
+
+<!-- PLAYER -->
+
+<div id="player" class="player hidden">
+
+<div id="playerTitle" class="player-title">
+🎧 Tilawat
+</div>
+
+<audio id="audioPlayer" controls preload="none"></audio>
+
+<div class="player-buttons">
+
+<button onclick="pauseAudio()">
+⏸ Pause
+</button>
+
+<button onclick="resumeAudio()">
+▶ Resume
+</button>
+
+<button class="btn-red" onclick="stopAudio()">
+⏹ Stop
+</button>
+
+</div>
+
+</div>
+
+
+<div class="footer">
+
+नूर-ए-हिदायत — Islamic Digital Library
+
+</div>
+
+</main>
+
+
+<script>
+
+/* =========================================================
+   CONFIG
+========================================================= */
+
+const API =
+"https://api.alquran.cloud/v1";
+
+const AYAH_AUDIO =
+"https://cdn.islamic.network/quran/audio/128/ar.alafasy/";
+
+const SURAH_AUDIO =
+"https://cdn.islamic.network/quran/audio-surah/128/ar.alafasy/";
+
+const ARABIC =
+"quran-uthmani";
+
+const HINDI =
+"hi.farooq";
+
+const ENGLISH =
+"en.sahih";
+
+
+/* =========================================================
+   SURAH DATA
+========================================================= */
+
+const surahs = [
+
+["Al-Fatiha","الفاتحة",7],
+["Al-Baqarah","البقرة",286],
+["Aal-E-Imran","آل عمران",200],
+["An-Nisa","النساء",176],
+["Al-Ma'idah","المائدة",120],
+["Al-An'am","الأنعام",165],
+["Al-A'raf","الأعراف",206],
+["Al-Anfal","الأنفال",75],
+["At-Tawbah","التوبة",129],
+["Yunus","يونس",109],
+["Hud","هود",123],
+["Yusuf","يوسف",111],
+["Ar-Ra'd","الرعد",43],
+["Ibrahim","إبراهيم",52],
+["Al-Hijr","الحجر",99],
+["An-Nahl","النحل",128],
+["Al-Isra","الإسراء",111],
+["Al-Kahf","الكهف",110],
+["Maryam","مريم",98],
+["Ta-Ha","طه",135],
+["Al-Anbya","الأنبياء",112],
+["Al-Hajj","الحج",78],
+["Al-Mu'minun","المؤمنون",118],
+["An-Nur","النور",64],
+["Al-Furqan","الفرقان",77],
+["Ash-Shu'ara","الشعراء",227],
+["An-Naml","النمل",93],
+["Al-Qasas","القصص",88],
+["Al-Ankabut","العنكبوت",69],
+["Ar-Rum","الروم",60],
+["Luqman","لقمان",34],
+["As-Sajdah","السجدة",30],
+["Al-Ahzab","الأحزاب",73],
+["Saba","سبأ",54],
+["Fatir","فاطر",45],
+["Ya-Sin","يس",83],
+["As-Saffat","الصافات",182],
+["Sad","ص",88],
+["Az-Zumar","الزمر",75],
+["Ghafir","غافر",85],
+["Fussilat","فصلت",54],
+["Ash-Shura","الشورى",53],
+["Az-Zukhruf","الزخرف",89],
+["Ad-Dukhan","الدخان",59],
+["Al-Jathiyah","الجاثية",37],
+["Al-Ahqaf","الأحقاف",35],
+["Muhammad","محمد",38],
+["Al-Fath","الفتح",29],
+["Al-Hujurat","الحجرات",18],
+["Qaf","ق",45],
+["Adh-Dhariyat","الذاريات",60],
+["At-Tur","الطور",49],
+["An-Najm","النجم",62],
+["Al-Qamar","القمر",55],
+["Ar-Rahman","الرحمن",78],
+["Al-Waqi'ah","الواقعة",96],
+["Al-Hadid","الحديد",29],
+["Al-Mujadilah","المجادلة",22],
+["Al-Hashr","الحشر",24],
+["Al-Mumtahanah","الممتحنة",13],
+["As-Saff","الصف",14],
+["Al-Jumu'ah","الجمعة",11],
+["Al-Munafiqun","المنافقون",11],
+["At-Taghabun","التغابن",18],
+["At-Talaq","الطلاق",12],
+["At-Tahrim","التحريم",12],
+["Al-Mulk","الملك",30],
+["Al-Qalam","القلم",52],
+["Al-Haqqah","الحاقة",52],
+["Al-Ma'arij","المعارج",44],
+["Nuh","نوح",28],
+["Al-Jinn","الجن",28],
+["Al-Muzzammil","المزمل",20],
+["Al-Muddaththir","المدثر",56],
+["Al-Qiyamah","القيامة",40],
+["Al-Insan","الإنسان",31],
+["Al-Mursalat","المرسلات",50],
+["An-Naba","النبأ",40],
+["An-Nazi'at","النازعات",46],
+["Abasa","عبس",42],
+["At-Takwir","التكوير",29],
+["Al-Infitar","الانفطار",19],
+["Al-Mutaffifin","المطففين",36],
+["Al-Inshiqaq","الانشقاق",25],
+["Al-Buruj","البروج",22],
+["At-Tariq","الطارق",17],
+["Al-A'la","الأعلى",19],
+["Al-Ghashiyah","الغاشية",26],
+["Al-Fajr","الفجر",30],
+["Al-Balad","البلد",20],
+["Ash-Shams","الشمس",15],
+["Al-Layl","الليل",21],
+["Ad-Duha","الضحى",11],
+["Ash-Sharh","الشرح",8],
+["At-Tin","التين",8],
+["Al-Alaq","العلق",19],
+["Al-Qadr","القدر",5],
+["Al-Bayyinah","البينة",8],
+["Az-Zalzalah","الزلزلة",8],
+["Al-Adiyat","العاديات",11],
+["Al-Qari'ah","القارعة",11],
+["At-Takathur","التكاثر",8],
+["Al-Asr","العصر",3],
+["Al-Humazah","الهمزة",9],
+["Al-Fil","الفيل",5],
+["Quraysh","قريش",4],
+["Al-Ma'un","الماعون",7],
+["Al-Kawthar","الكوثر",3],
+["Al-Kafirun","الكافرون",6],
+["An-Nasr","النصر",3],
+["Al-Masad","المسد",5],
+["Al-Ikhlas","الإخلاص",4],
+["Al-Falaq","الفلق",5],
+["An-Nas","الناس",6]
+
+];
+
+
+/* =========================================================
+   30 JUZ RANGE
+========================================================= */
+
+const juzRanges = [
+
+{start:"1:1",end:"2:141"},
+{start:"2:142",end:"2:252"},
+{start:"2:253",end:"3:92"},
+{start:"3:93",end:"4:23"},
+{start:"4:24",end:"4:147"},
+{start:"4:148",end:"5:81"},
+{start:"5:82",end:"6:110"},
+{start:"6:111",end:"7:87"},
+{start:"7:88",end:"8:40"},
+{start:"8:41",end:"9:92"},
+
+{start:"9:93",end:"11:5"},
+{start:"11:6",end:"12:52"},
+{start:"12:53",end:"14:52"},
+{start:"15:1",end:"16:128"},
+{start:"17:1",end:"18:74"},
+{start:"18:75",end:"20:135"},
+{start:"21:1",end:"22:78"},
+{start:"23:1",end:"25:20"},
+{start:"25:21",end:"27:55"},
+{start:"27:56",end:"29:45"},
+
+{start:"29:46",end:"33:30"},
+{start:"33:31",end:"36:27"},
+{start:"36:28",end:"39:31"},
+{start:"39:32",end:"41:46"},
+{start:"41:47",end:"45:37"},
+{start:"46:1",end:"51:30"},
+{start:"51:31",end:"57:29"},
+{start:"58:1",end:"66:12"},
+{start:"67:1",end:"77:50"},
+{start:"78:1",end:"114:6"}
+
+];
+
+
+/* =========================================================
+   GLOBAL AUDIO QUEUE
+========================================================= */
+
+let audioQueue = [];
+let audioIndex = 0;
+let audioMode = "";
+
+
+/* =========================================================
+   SECTION SWITCH
+========================================================= */
+
+function openSection(id,button=null){
+
+document.querySelectorAll(".section")
+.forEach(section=>{
+section.classList.add("hidden");
+});
+
+const target=document.getElementById(id);
+
+if(target){
+target.classList.remove("hidden");
+}
+
+document.querySelectorAll(".tab")
+.forEach(btn=>{
+btn.classList.remove("active");
+});
+
+if(button){
+button.classList.add("active");
+}
+
+window.scrollTo({
+top:300,
+behavior:"smooth"
+});
+
+}
+
+
+/* =========================================================
+   BUILD SURAH SELECT
+========================================================= */
+
+function buildSurahSelect(){
+
+const select=document.getElementById("surahSelect");
+
+surahs.forEach((s,index)=>{
+
+const option=document.createElement("option");
+
+option.value=index+1;
+
+option.textContent=
+`${index+1}. ${s[0]} — ${s[1]} (${s[2]} आयत)`;
+
+select.appendChild(option);
+
+});
+
+}
+
+
+/* =========================================================
+   BUILD SURAH LIST
+========================================================= */
+
+function buildSurahList(){
+
+const box=document.getElementById("surahList");
+
+box.innerHTML="";
+
+surahs.forEach((s,index)=>{
+
+const number=index+1;
+
+const div=document.createElement("div");
+
+div.className="surah-card";
+
+div.dataset.search=
+`${number} ${s[0].toLowerCase()} ${s[1]}`;
+
+div.innerHTML=`
+
+<div class="surah-name">
+${number}. ${s[0]}
+</div>
+
+<div class="surah-arabic">
+${s[1]}
+</div>
+
+<div>
+${s[2]} आयत
+</div>
+
+<button
+onclick="loadSurah(${number})">
+📖 पढ़ें
+</button>
+
+<button
+class="btn-green"
+onclick="playFullSurah(${number})">
+▶ पूरी सूरह
+</button>
+
+`;
+
+box.appendChild(div);
+
+});
+
+}
+
+
+/* =========================================================
+   FILTER SURAH
+========================================================= */
+
+function filterSurahs(){
+
+const q=
+document.getElementById("surahSearch")
+.value
+.toLowerCase()
+.trim();
+
+document
+.querySelectorAll(".surah-card")
+.forEach(card=>{
+
+card.style.display=
+card.dataset.search.includes(q)
+?"block"
+:"none";
+
+});
+
+}
+
+
+/* =========================================================
+   BUILD 30 JUZ
+========================================================= */
+
+function buildJuz(){
+
+const grid=document.getElementById("juzGrid");
+
+grid.innerHTML="";
+
+for(let i=1;i<=30;i++){
+
+const range=juzRanges[i-1];
+
+const div=document.createElement("div");
+
+div.className="juz-card";
+
+div.innerHTML=`
+
+<strong>📚 पारा ${i}</strong>
+
+<small>
+${range.start} — ${range.end}
+</small>
+
+<button
+onclick="loadJuz(${i})">
+📖 पढ़ें
+</button>
+
+<button
+class="btn-green"
+onclick="playFullJuz(${i})">
+▶ पूरा पारा सुनें
+</button>
+
+`;
+
+grid.appendChild(div);
+
+}
+
+}
+
+
+/* =========================================================
+   LOAD SURAH
+========================================================= */
+
+async function loadSurah(number){
+
+openSection("quran");
+
+const box=document.getElementById("quranReader");
+
+box.innerHTML=`
+<div class="card loading">
+📖 सूरह लोड हो रही है...
+</div>
+`;
+
+try{
+
+const [arRes,hiRes,enRes]=await Promise.all([
+
+fetch(`${API}/surah/${number}/${ARABIC}`),
+
+fetch(`${API}/surah/${number}/${HINDI}`),
+
+fetch(`${API}/surah/${number}/${ENGLISH}`)
+
+]);
+
+const ar=await arRes.json();
+const hi=await hiRes.json();
+const en=await enRes.json();
+
+const arabicAyahs=ar.data.ayahs;
+const hindiAyahs=hi.data.ayahs;
+const englishAyahs=en.data.ayahs;
+
+let html=`
+
+<div class="card">
+
+<h2>
+${number}. ${surahs[number-1][0]}
+</h2>
+
+<div class="surah-arabic">
+${surahs[number-1][1]}
+</div>
+
+<button
+class="btn-green"
+onclick="playFullSurah(${number})">
+▶ पूरी सूरह सुनें
+</button>
+
+</div>
+`;
+
+arabicAyahs.forEach((ayah,index)=>{
+
+html+=createAyahHTML(
+ayah,
+hindiAyahs[index],
+englishAyahs[index]
+);
+
+});
+
+box.innerHTML=html;
+
+}catch(error){
+
+box.innerHTML=`
+
+<div class="card">
+
+<h2>❌ Error</h2>
+
+<p>
+Quran data load नहीं हो पाया।
+Internet connection check करें।
+</p>
+
+</div>
+
+`;
+
+console.error(error);
+
+}
+
+}
+
+
+/* =========================================================
+   AYAH HTML
+========================================================= */
+
+function createAyahHTML(ar,hi,en){
+
+return `
+
+<div class="ayah">
+
+<div class="ayah-number">
+आयत ${ar.numberInSurah}
+</div>
+
+<div class="arabic">
+${ar.text}
+</div>
+
+<div class="hindi">
+${hi ? hi.text : ""}
+</div>
+
+<div class="english">
+${en ? en.text : ""}
+</div>
+
+<button
+onclick="playAyah(${ar.number})">
+▶ आयत सुनें
+</button>
+
+</div>
+
+`;
+
+}
+
+
+/* =========================================================
+   PLAY SINGLE AYAH
+========================================================= */
+
+function playAyah(globalNumber){
+
+audioQueue=[
+globalNumber
+];
+
+audioIndex=0;
+
+audioMode="ayah";
+
+showPlayer("🎧 Quran Ayah");
+
+playNextAudio();
+
+}
+
+
+/* =========================================================
+   PLAY FULL SURAH
+========================================================= */
+
+function playFullSurah(number){
+
+audioQueue=[];
+
+const total=
+surahs[number-1][2];
+
+let firstGlobal=1;
+
+for(let i=0;i<number-1;i++){
+
+firstGlobal+=surahs[i][2];
+
+}
+
+for(let i=0;i<total;i++){
+
+audioQueue.push(firstGlobal+i);
+
+}
+
+audioIndex=0;
+
+audioMode="surah";
+
+showPlayer(
+`🎧 ${number}. ${surahs[number-1][0]} — पूरी सूरह`
+);
+
+playNextAudio();
+
+}
+
+
+/* =========================================================
+   PLAY FULL JUZ
+========================================================= */
+
+async function playFullJuz(juz){
+
+showPlayer(
+`🎧 पारा ${juz} — आयतें तैयार हो रही हैं...`
+);
+
+try{
+
+/*
+Al Quran Cloud Juz endpoint.
+We request Arabic Juz data and use
+the global ayah number returned by API.
+*/
+
+const response=
+await fetch(
+`${API}/juz/${juz}/${ARABIC}`
+);
+
+const result=await response.json();
+
+if(
+!result.data ||
+!result.data.ayahs
+){
+
+throw new Error("Juz data unavailable");
+
+}
+
+audioQueue=
+result.data.ayahs.map(
+ayah=>ayah.number
+);
+
+audioIndex=0;
+
+audioMode="juz";
+
+showPlayer(
+`🎧 पारा ${juz} — पूरा पारा`
+);
+
+playNextAudio();
+
+}catch(error){
+
+console.error(error);
+
+hidePlayer();
+
+alert(
+"पारा की audio list load नहीं हुई। Internet connection check करें।"
+);
+
+}
+
+}
+
+
+/* =========================================================
+   AUDIO NEXT
+========================================================= */
+
+function playNextAudio(){
+
+if(
+audioIndex>=audioQueue.length
+){
+
+document.getElementById(
+"playerTitle"
+).textContent+=" — समाप्त ✅";
+
+return;
+
+}
+
+const globalAyah=
+audioQueue[audioIndex];
+
+const audio=
+document.getElementById(
+"audioPlayer"
+);
+
+audio.src=
+AYAH_AUDIO+
+globalAyah+
+".mp3";
+
+audio.load();
+
+audio.play()
+.catch(error=>{
+
+console.log(
+"Autoplay blocked. Player में Play दबाएँ.",
+error
+);
+
+});
+
+}
+
+
+/* =========================================================
+   AUDIO ENDED
+========================================================= */
+
+document
+.getElementById("audioPlayer")
+.addEventListener(
+"ended",
+function(){
+
+audioIndex++;
+
+playNextAudio();
+
+}
+);
+
+
+/* =========================================================
+   PLAYER
+========================================================= */
+
+function showPlayer(title){
+
+const player=
+document.getElementById("player");
+
+player.classList.remove("hidden");
+
+document.getElementById(
+"playerTitle"
+).textContent=title;
+
+}
+
+function hidePlayer(){
+
+document
+.getElementById("player")
+.classList.add("hidden");
+
+}
+
+function pauseAudio(){
+
+document
+.getElementById("audioPlayer")
+.pause();
+
+}
+
+function resumeAudio(){
+
+document
+.getElementById("audioPlayer")
+.play();
+
+}
+
+function stopAudio(){
+
+const audio=
+document.getElementById("audioPlayer");
+
+audio.pause();
+
+audio.currentTime=0;
+
+audioQueue=[];
+
+audioIndex=0;
+
+hidePlayer();
+
+}
+
+
+/* =========================================================
+   SEARCH QURAN
+========================================================= */
+
+async function searchQuran(){
+
+const query=
+document.getElementById("searchInput")
+.value
+.trim();
+
+if(!query){
+
+return;
+
+}
+
+const box=
+document.getElementById("searchResults");
+
+box.innerHTML=
+`<div class="loading">🔎 Search हो रहा है...</div>`;
+
+try{
+
+const response=
+await fetch(
+`${API}/search/${encodeURIComponent(query)}/all/${ENGLISH}`
+);
+
+const result=
+await response.json();
+
+if(
+!result.data ||
+!result.data.matches ||
+result.data.matches.length===0
+){
+
+box.innerHTML=
+"<p>कोई result नहीं मिला।</p>";
+
+return;
+
+}
+
+let html="";
+
+result.data.matches
+.slice(0,30)
+.forEach(match=>{
+
+html+=`
+
+<div class="ayah">
+
+<div class="ayah-number">
+
+${match.surah.englishName}
+—
+आयत ${match.numberInSurah}
+
+</div>
+
+<div class="english">
+
+${match.text}
+
+</div>
+
+</div>
+
+`;
+
+});
+
+box.innerHTML=html;
+
+}catch(error){
+
+console.error(error);
+
+box.innerHTML=
+"<p>Search में समस्या हुई।</p>";
+
+}
+
+}
+
+
+/* =========================================================
+   INITIALIZE
+========================================================= */
+
+function init(){
+
+buildSurahSelect();
+
+buildSurahList();
+
+buildJuz();
+
+}
+
+init();
+
+</script>
+
+</body>
+</html>
