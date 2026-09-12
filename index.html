@@ -1,0 +1,1759 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>नूर-ए-हिदायत | पूरा इस्लामी किताबघर</title>
+
+<style>
+*{
+box-sizing:border-box;
+}
+
+body{
+margin:0;
+background:#06120d;
+color:#f5f1e7;
+font-family:Arial,"Noto Sans Devanagari",sans-serif;
+}
+
+header{
+position:sticky;
+top:0;
+z-index:1000;
+background:#071810f5;
+border-bottom:1px solid #2b513e;
+backdrop-filter:blur(10px);
+}
+
+nav{
+max-width:1200px;
+margin:auto;
+padding:14px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:10px;
+}
+
+.logo{
+font-size:21px;
+font-weight:800;
+color:#dfbd63;
+}
+
+nav span{
+color:#aebdb4;
+font-size:13px;
+}
+
+main{
+max-width:1200px;
+margin:auto;
+padding:18px 14px 80px;
+}
+
+.hero{
+padding:35px 15px;
+text-align:center;
+border:1px solid #2a513c;
+border-radius:24px;
+background:
+radial-gradient(circle at top,#16452e,#0a1e14 60%,#07150e);
+}
+
+.hero h1{
+font-family:"Noto Naskh Arabic","Amiri",serif;
+font-size:clamp(35px,8vw,65px);
+margin:0;
+}
+
+.hero h2{
+color:#dfbd63;
+margin:5px 0;
+}
+
+.hero p{
+color:#b9c7bf;
+}
+
+.tabs{
+display:flex;
+gap:8px;
+overflow-x:auto;
+padding:5px 0;
+margin:18px 0;
+}
+
+.tabs button{
+white-space:nowrap;
+background:#11291d;
+color:white;
+border:1px solid #315943;
+border-radius:11px;
+padding:12px 15px;
+cursor:pointer;
+}
+
+.tabs button.active{
+background:#d9b45d;
+color:#151109;
+font-weight:bold;
+}
+
+section{
+display:none;
+}
+
+section.active{
+display:block;
+}
+
+.box{
+background:#0b2117;
+border:1px solid #28503b;
+border-radius:16px;
+padding:16px;
+margin:12px 0;
+}
+
+.controls{
+display:grid;
+grid-template-columns:1fr auto;
+gap:10px;
+}
+
+select,
+input{
+width:100%;
+padding:13px;
+background:#07150f;
+border:1px solid #315943;
+border-radius:11px;
+color:white;
+font-size:16px;
+}
+
+.btn{
+background:#d9b45d;
+color:#151109;
+border:0;
+border-radius:10px;
+padding:12px 18px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.btn2{
+background:#173a29;
+color:white;
+border:1px solid #315943;
+border-radius:10px;
+padding:10px 14px;
+cursor:pointer;
+}
+
+.status{
+margin-top:10px;
+color:#b8c6bd;
+}
+
+.error{
+color:#ffaaa0;
+}
+
+.juzGrid{
+display:grid;
+grid-template-columns:
+repeat(auto-fill,minmax(120px,1fr));
+gap:10px;
+margin-top:15px;
+}
+
+.juzButton{
+background:#10291d;
+border:1px solid #2b513d;
+color:white;
+border-radius:12px;
+padding:14px 8px;
+cursor:pointer;
+}
+
+.juzButton:hover{
+background:#183d2a;
+}
+
+.juzButton strong{
+display:block;
+color:#dfbd63;
+font-size:18px;
+}
+
+.juzButton small{
+display:block;
+margin-top:5px;
+color:#b7c5bc;
+}
+
+.surahPlayer{
+background:#0c2519;
+border:1px solid #315943;
+border-radius:16px;
+padding:16px;
+margin-bottom:18px;
+}
+
+audio{
+width:100%;
+margin-top:10px;
+}
+
+.ayah{
+background:#091b13;
+border:1px solid #254b38;
+border-radius:16px;
+padding:17px;
+margin:12px 0;
+}
+
+.number{
+display:inline-flex;
+width:35px;
+height:35px;
+align-items:center;
+justify-content:center;
+border-radius:50%;
+background:#183c2b;
+color:#dfbd63;
+font-weight:bold;
+}
+
+.label{
+font-size:12px;
+font-weight:bold;
+letter-spacing:1px;
+color:#dfbd63;
+margin-top:13px;
+}
+
+.arabic{
+direction:rtl;
+text-align:right;
+font-family:"Noto Naskh Arabic","Amiri","Times New Roman",serif;
+font-size:30px;
+line-height:2.05;
+margin:8px 0;
+}
+
+.hindi,
+.english{
+font-size:17px;
+line-height:1.85;
+}
+
+.grid{
+display:grid;
+grid-template-columns:
+repeat(auto-fit,minmax(230px,1fr));
+gap:12px;
+}
+
+.card{
+background:#0b2117;
+border:1px solid #28503b;
+border-radius:15px;
+padding:17px;
+}
+
+.card h3{
+color:#dfbd63;
+margin-top:0;
+}
+
+.muted{
+color:#b9c6be;
+}
+
+.loader{
+padding:30px;
+text-align:center;
+color:#b8c6bd;
+}
+
+footer{
+text-align:center;
+color:#8fa098;
+padding:30px 10px;
+border-top:1px solid #1f3d2e;
+}
+
+@media(max-width:650px){
+
+.controls{
+grid-template-columns:1fr;
+}
+
+.arabic{
+font-size:25px;
+}
+
+.hero{
+padding:25px 12px;
+}
+
+}
+</style>
+</head>
+
+
+<body>
+
+
+<header>
+
+<nav>
+
+<div class="logo">
+☾ नूर-ए-हिदायत
+</div>
+
+<span>
+Quran • Hadith • Kalima • Dua
+</span>
+
+</nav>
+
+</header>
+
+
+<main>
+
+
+<!-- HERO -->
+
+<div class="hero">
+
+<h1>
+الْقُرْآنُ الْكَرِيم
+</h1>
+
+<h2>
+नूर-ए-हिदायत
+</h2>
+
+<p>
+Complete Islamic Digital Library
+</p>
+
+</div>
+
+
+<!-- MENU -->
+
+<div class="tabs">
+
+<button class="active"
+onclick="openTab('quran',this)">
+📖 Quran
+</button>
+
+<button
+onclick="openTab('juz',this)">
+📚 30 पारा
+</button>
+
+<button
+onclick="openTab('kalima',this)">
+☪️ कलिमा
+</button>
+
+<button
+onclick="openTab('hadith',this)">
+📜 हदीस
+</button>
+
+<button
+onclick="openTab('namaz',this)">
+🕌 नमाज़
+</button>
+
+<button
+onclick="openTab('dua',this)">
+🤲 दुआ
+</button>
+
+<button
+onclick="openTab('qaida',this)">
+📗 नूरानी क़ायदा
+</button>
+
+</div>
+
+
+
+<!-- ================= QURAN ================= -->
+
+<section id="quran" class="active">
+
+<div class="box">
+
+<h2>
+📖 कुरआन करीम
+</h2>
+
+<div class="controls">
+
+<select id="surahSelect">
+</select>
+
+<button
+class="btn"
+onclick="loadSurah()">
+सूरह खोलें
+</button>
+
+</div>
+
+
+<input
+id="search"
+placeholder="इस सूरह में खोजें — Search"
+style="margin-top:10px">
+
+<div id="quranStatus"
+class="status">
+लोड हो रहा है...
+</div>
+
+</div>
+
+
+<div id="quranContent"></div>
+
+</section>
+
+
+
+<!-- ================= JUZ ================= -->
+
+<section id="juz">
+
+<div class="box">
+
+<h2>
+📚 कुरआन के 30 पारे
+</h2>
+
+<p class="muted">
+पारा चुनें → पूरा पारा पढ़ें और सुनें।
+</p>
+
+<div
+id="juzGrid"
+class="juzGrid">
+</div>
+
+</div>
+
+<div id="juzContent"></div>
+
+</section>
+
+
+
+<!-- ================= KALIMA ================= -->
+
+<section id="kalima">
+
+<div class="box">
+
+<h2>
+☪️ छः कलिमे
+</h2>
+
+<p class="muted">
+Arabic • हिन्दी • English
+</p>
+
+</div>
+
+<div id="kalimaContent"></div>
+
+</section>
+
+
+
+<!-- ================= HADITH ================= -->
+
+<section id="hadith">
+
+<div class="box">
+
+<h2>
+📜 हदीस शरीफ़
+</h2>
+
+<p>
+हदीस को किताब और Hadith Number के साथ verified dataset से जोड़ना चाहिए।
+</p>
+
+</div>
+
+
+<div class="grid">
+
+<div class="card">
+
+<h3>
+सहीह अल-बुखारी
+</h3>
+
+<p>
+Sahih al-Bukhari
+</p>
+
+<p class="muted">
+Hadith 1 से आगे।
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>
+सहीह मुस्लिम
+</h3>
+
+<p>
+Sahih Muslim
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>
+सुनन अबू दाऊद
+</h3>
+
+<p>
+Sunan Abi Dawud
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>
+जामे तिर्मिज़ी
+</h3>
+
+<p>
+Jami at-Tirmidhi
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>
+सुनन नसाई
+</h3>
+
+<p>
+Sunan an-Nasa'i
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>
+सुनन इब्न माजा
+</h3>
+
+<p>
+Sunan Ibn Majah
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ================= NAMAZ ================= -->
+
+<section id="namaz">
+
+<div class="box">
+
+<h2>
+🕌 नमाज़ — Salah
+</h2>
+
+<p>
+पाँच वक्त की नमाज़:
+</p>
+
+</div>
+
+<div class="grid">
+
+<div class="card">
+<h3>फ़ज्र — Fajr</h3>
+<p>सुबह की नमाज़</p>
+</div>
+
+<div class="card">
+<h3>ज़ुहर — Dhuhr</h3>
+<p>दोपहर की नमाज़</p>
+</div>
+
+<div class="card">
+<h3>असर — Asr</h3>
+<p>असर की नमाज़</p>
+</div>
+
+<div class="card">
+<h3>मग़रिब — Maghrib</h3>
+<p>सूरज डूबने के बाद</p>
+</div>
+
+<div class="card">
+<h3>ईशा — Isha</h3>
+<p>रात की नमाज़</p>
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ================= DUA ================= -->
+
+<section id="dua">
+
+<div class="box">
+
+<h2>
+🤲 दुआएँ — Duas
+</h2>
+
+</div>
+
+
+<div class="grid">
+
+<div class="card">
+
+<h3>
+बिस्मिल्लाह
+</h3>
+
+<div class="arabic">
+بِسْمِ اللّٰهِ
+</div>
+
+<p>
+अल्लाह के नाम से।
+</p>
+
+<p>
+In the name of Allah.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>
+सलाम
+</h3>
+
+<div class="arabic">
+السَّلَامُ عَلَيْكُمْ
+</div>
+
+<p>
+आप पर सलामती हो।
+</p>
+
+<p>
+Peace be upon you.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>
+इस्तिग़फ़ार
+</h3>
+
+<div class="arabic">
+أَسْتَغْفِرُ اللّٰهَ
+</div>
+
+<p>
+मैं अल्लाह से माफी मांगता हूँ।
+</p>
+
+<p>
+I seek forgiveness from Allah.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ================= QAIDA ================= -->
+
+<section id="qaida">
+
+<div class="box">
+
+<h2>
+📗 नूरानी क़ायदा
+</h2>
+
+<p>
+बच्चों और शुरुआती सीखने वालों के लिए Arabic पढ़ने की बुनियादी शिक्षा।
+</p>
+
+</div>
+
+
+<div class="grid">
+
+<div class="card">
+
+<h3>
+अलिफ़
+</h3>
+
+<div class="arabic">
+ا
+</div>
+
+</div>
+
+
+<div class="card">
+
+<h3>
+बा
+</h3>
+
+<div class="arabic">
+ب
+</div>
+
+</div>
+
+
+<div class="card">
+
+<h3>
+ता
+</h3>
+
+<div class="arabic">
+ت
+</div>
+
+</div>
+
+
+<div class="card">
+
+<h3>
+था
+</h3>
+
+<div class="arabic">
+ث
+</div>
+
+</div>
+
+
+<div class="card">
+
+<h3>
+जिम
+</h3>
+
+<div class="arabic">
+ج
+</div>
+
+</div>
+
+
+<div class="card">
+
+<h3>
+हा
+</h3>
+
+<div class="arabic">
+ح
+</div>
+
+</div>
+
+
+<div class="card">
+
+<h3>
+खा
+</h3>
+
+<div class="arabic">
+خ
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+</main>
+
+
+<footer>
+
+नूर-ए-हिदायत • Quran • Islamic Learning
+
+</footer>
+
+
+
+<script>
+
+
+/* =========================================
+   API SETTINGS
+========================================= */
+
+const API =
+"https://api.alquran.cloud/v1";
+
+
+const AYAH_AUDIO =
+"https://cdn.islamic.network/quran/audio/128/ar.alafasy/";
+
+
+const SURAH_AUDIO =
+"https://cdn.islamic.network/quran/audio-surah/128/ar.alafasy/";
+
+
+const ARABIC =
+"quran-uthmani";
+
+
+const HINDI =
+"hi.farooq";
+
+
+const ENGLISH =
+"en.sahih";
+
+
+let currentAyahs=[];
+
+let currentSurah=null;
+
+
+
+/* =========================================
+   HTML SAFE
+========================================= */
+
+function safe(text){
+
+return String(text || "")
+.replace(/&/g,"&amp;")
+.replace(/</g,"&lt;")
+.replace(/>/g,"&gt;")
+.replace(/"/g,"&quot;")
+.replace(/'/g,"&#039;");
+
+}
+
+
+
+/* =========================================
+   API GET
+========================================= */
+
+async function getData(url){
+
+const response =
+await fetch(
+url,
+{
+cache:"no-cache"
+}
+);
+
+
+if(!response.ok){
+
+throw new Error(
+"HTTP "+response.status
+);
+
+}
+
+
+const json =
+await response.json();
+
+
+if(json.code !== 200){
+
+throw new Error(
+json.status || "API error"
+);
+
+}
+
+
+return json.data;
+
+}
+
+
+
+/* =========================================
+   TAB
+========================================= */
+
+function openTab(id,button){
+
+document
+.querySelectorAll("section")
+.forEach(
+s =>
+s.classList.remove("active")
+);
+
+
+document
+.getElementById(id)
+.classList.add("active");
+
+
+document
+.querySelectorAll(".tabs button")
+.forEach(
+b =>
+b.classList.remove("active")
+);
+
+
+button.classList.add("active");
+
+}
+
+
+
+/* =========================================
+   LOAD SURAH LIST
+========================================= */
+
+async function initSurahs(){
+
+try{
+
+const surahs =
+await getData(
+API+"/surah"
+);
+
+
+const select =
+document.getElementById(
+"surahSelect"
+);
+
+
+select.innerHTML =
+surahs.map(
+s=>`
+
+<option value="${s.number}">
+
+${s.number}.
+${safe(s.englishName)}
+
+—
+
+${safe(s.name)}
+
+</option>
+
+`
+).join("");
+
+
+select.value="1";
+
+
+await loadSurah();
+
+
+}
+
+catch(error){
+
+document.getElementById(
+"quranStatus"
+).innerHTML =
+"❌ Quran लोड नहीं हुआ। Internet connection check करें।";
+
+console.error(error);
+
+}
+
+}
+
+
+
+/* =========================================
+   LOAD SURAH
+========================================= */
+
+async function loadSurah(){
+
+const number =
+Number(
+document.getElementById(
+"surahSelect"
+).value
+);
+
+
+const content =
+document.getElementById(
+"quranContent"
+);
+
+
+content.innerHTML =
+`
+
+<div class="loader">
+
+⏳ Arabic + हिन्दी + English + तिलावत लोड हो रही है...
+
+</div>
+
+`;
+
+
+try{
+
+const data =
+await Promise.all([
+
+getData(
+`${API}/surah/${number}/${ARABIC}`
+),
+
+getData(
+`${API}/surah/${number}/${HINDI}`
+),
+
+getData(
+`${API}/surah/${number}/${ENGLISH}`
+)
+
+]);
+
+
+const arabic=data[0];
+
+const hindi=data[1];
+
+const english=data[2];
+
+
+currentSurah=arabic;
+
+
+currentAyahs =
+arabic.ayahs.map(
+(a,i)=>({
+
+global:
+a.number,
+
+number:
+a.numberInSurah,
+
+ar:
+a.text,
+
+hi:
+hindi.ayahs[i]
+?
+hindi.ayahs[i].text
+:
+"",
+
+en:
+english.ayahs[i]
+?
+english.ayahs[i].text
+:
+""
+
+})
+);
+
+
+renderQuran();
+
+
+document.getElementById(
+"quranStatus"
+).innerHTML =
+
+`${arabic.number}.
+${safe(arabic.name)}
+—
+${safe(arabic.englishName)}
+—
+${arabic.numberOfAyahs} आयत`;
+
+}
+
+catch(error){
+
+content.innerHTML =
+`
+
+<div class="box error">
+
+❌ Quran load error:
+
+${safe(error.message)}
+
+</div>
+
+`;
+
+}
+
+}
+
+
+
+/* =========================================
+   RENDER QURAN
+========================================= */
+
+function renderQuran(){
+
+const query =
+document
+.getElementById("search")
+.value
+.trim()
+.toLowerCase();
+
+
+const ayahs =
+currentAyahs.filter(
+a=>
+
+!query ||
+
+a.ar
+.toLowerCase()
+.includes(query) ||
+
+a.hi
+.toLowerCase()
+.includes(query) ||
+
+a.en
+.toLowerCase()
+.includes(query)
+);
+
+
+let html =
+`
+
+<div class="surahPlayer">
+
+<h2>
+
+${safe(currentSurah.name)}
+
+—
+
+${safe(currentSurah.englishName)}
+
+</h2>
+
+<audio
+controls
+preload="metadata"
+src="${SURAH_AUDIO}${currentSurah.number}.mp3">
+</audio>
+
+<p class="muted">
+
+▶ पूरी सूरह की तिलावत
+
+</p>
+
+</div>
+
+`;
+
+
+html +=
+ayahs.map(
+a=>`
+
+<div class="ayah">
+
+<span class="number">
+${a.number}
+</span>
+
+
+<div class="label">
+ARABIC
+</div>
+
+<div class="arabic">
+${safe(a.ar)}
+</div>
+
+
+<div class="label">
+हिन्दी अर्थ
+</div>
+
+<div class="hindi">
+${safe(a.hi)}
+</div>
+
+
+<div class="label">
+ENGLISH MEANING
+</div>
+
+<div class="english">
+${safe(a.en)}
+</div>
+
+
+<br>
+
+
+<button
+class="btn2"
+onclick="playAyah(${a.global})">
+
+▶ आयत सुनें / Listen
+
+</button>
+
+</div>
+
+`
+).join("");
+
+
+if(!ayahs.length){
+
+html +=
+`
+
+<div class="box">
+कोई आयत नहीं मिली।
+</div>
+
+`;
+
+}
+
+
+document.getElementById(
+"quranContent"
+).innerHTML=html;
+
+}
+
+
+
+/* =========================================
+   SEARCH
+========================================= */
+
+document
+.getElementById("search")
+.addEventListener(
+"input",
+renderQuran
+);
+
+
+
+/* =========================================
+   AUDIO PLAYER
+========================================= */
+
+const player =
+document.createElement(
+"audio"
+);
+
+
+player.controls=true;
+
+player.style.position="fixed";
+
+player.style.bottom="10px";
+
+player.style.left="10px";
+
+player.style.width=
+"calc(100% - 20px)";
+
+player.style.zIndex="9999";
+
+player.style.display="none";
+
+document.body.appendChild(
+player
+);
+
+
+function playAyah(number){
+
+player.src =
+AYAH_AUDIO +
+number +
+".mp3";
+
+
+player.style.display="block";
+
+
+player.play()
+.catch(
+()=>{
+
+alert(
+"Audio शुरू नहीं हुआ। Internet और phone media volume check करें।"
+);
+
+}
+);
+
+}
+
+
+
+/* =========================================
+   30 JUZ
+========================================= */
+
+const juzInfo=[
+
+[1,"Al-Fatiha 1:1","Al-Baqarah 2:141"],
+
+[2,"Al-Baqarah 2:142","Al-Baqarah 2:252"],
+
+[3,"Al-Baqarah 2:253","Ali Imran 3:92"],
+
+[4,"Ali Imran 3:93","An-Nisa 4:23"],
+
+[5,"An-Nisa 4:24","An-Nisa 4:147"],
+
+[6,"An-Nisa 4:148","Al-Maidah 5:81"],
+
+[7,"Al-Maidah 5:82","Al-Anam 6:110"],
+
+[8,"Al-Anam 6:111","Al-Araf 7:87"],
+
+[9,"Al-Araf 7:88","Al-Anfal 8:40"],
+
+[10,"Al-Anfal 8:41","At-Tawbah 9:92"],
+
+[11,"At-Tawbah 9:93","Hud 11:5"],
+
+[12,"Hud 11:6","Yusuf 12:52"],
+
+[13,"Yusuf 12:53","Ibrahim 14:52"],
+
+[14,"Al-Hijr 15:1","An-Nahl 16:128"],
+
+[15,"Al-Isra 17:1","Al-Kahf 18:74"],
+
+[16,"Al-Kahf 18:75","Ta-Ha 20:135"],
+
+[17,"Al-Anbiya 21:1","Al-Hajj 22:78"],
+
+[18,"Al-Muminun 23:1","Al-Furqan 25:20"],
+
+[19,"Al-Furqan 25:21","An-Naml 27:55"],
+
+[20,"An-Naml 27:56","Al-Ankabut 29:45"],
+
+[21,"Al-Ankabut 29:46","Al-Ahzab 33:30"],
+
+[22,"Al-Ahzab 33:31","Ya-Sin 36:27"],
+
+[23,"Ya-Sin 36:28","Az-Zumar 39:31"],
+
+[24,"Az-Zumar 39:32","Fussilat 41:46"],
+
+[25,"Fussilat 41:47","Al-Jathiyah 45:37"],
+
+[26,"Al-Ahqaf 46:1","Adh-Dhariyat 51:30"],
+
+[27,"Adh-Dhariyat 51:31","Al-Hadid 57:29"],
+
+[28,"Al-Mujadilah 58:1","At-Tahrim 66:12"],
+
+[29,"Al-Mulk 67:1","Al-Mursalat 77:50"],
+
+[30,"An-Naba 78:1","An-Nas 114:6"]
+
+];
+
+
+
+function createJuzButtons(){
+
+const grid =
+document.getElementById(
+"juzGrid"
+);
+
+
+grid.innerHTML =
+juzInfo.map(
+j=>`
+
+<button
+class="juzButton"
+onclick="loadJuz(${j[0]})">
+
+<strong>
+पारा ${j[0]}
+</strong>
+
+<small>
+${j[1]}
+</small>
+
+</button>
+
+`
+).join("");
+
+}
+
+
+
+/* =========================================
+   LOAD JUZ
+========================================= */
+
+async function loadJuz(number){
+
+const content =
+document.getElementById(
+"juzContent"
+);
+
+
+content.innerHTML =
+`
+
+<div class="box">
+
+⏳ पारा ${number} लोड हो रहा है...
+
+</div>
+
+`;
+
+
+try{
+
+const data =
+await getData(
+`${API}/juz/${number}/quran-uthmani`
+);
+
+
+let html=
+`
+
+<div class="box">
+
+<h2>
+📖 पारा ${number}
+</h2>
+
+<p class="muted">
+${juzInfo[number-1][1]}
+ → 
+${juzInfo[number-1][2]}
+</p>
+
+</div>
+
+`;
+
+
+html +=
+data.ayahs.map(
+a=>`
+
+<div class="ayah">
+
+<span class="number">
+${a.numberInSurah}
+</span>
+
+<div class="label">
+${safe(a.surah.name)}
+</div>
+
+<div class="arabic">
+${safe(a.text)}
+</div>
+
+<button
+class="btn2"
+onclick="playAyah(${a.number})">
+
+▶ सुनें / Listen
+
+</button>
+
+</div>
+
+`
+).join("");
+
+
+content.innerHTML=html;
+
+
+window.scrollTo({
+top:
+content.offsetTop-70,
+behavior:"smooth"
+});
+
+}
+
+catch(error){
+
+content.innerHTML =
+`
+
+<div class="box error">
+
+❌ पारा लोड नहीं हुआ:
+
+${safe(error.message)}
+
+</div>
+
+`;
+
+}
+
+}
+
+
+
+/* =========================================
+   KALIMA
+========================================= */
+
+const kalimas=[
+
+{
+
+title:"1. कलिमा तैय्यिब",
+
+ar:
+"لَا إِلٰهَ إِلَّا اللّٰهُ مُحَمَّدٌ رَّسُولُ اللّٰهِ",
+
+hi:
+"अल्लाह के सिवा कोई माबूद नहीं, मुहम्मद ﷺ अल्लाह के रसूल हैं।",
+
+en:
+"There is no deity except Allah; Muhammad ﷺ is the Messenger of Allah."
+
+},
+
+{
+
+title:"2. कलिमा शहादत",
+
+ar:
+"أَشْهَدُ أَنْ لَا إِلٰهَ إِلَّا اللّٰهُ وَحْدَهُ لَا شَرِيكَ لَهُ وَأَشْهَدُ أَنَّ مُحَمَّدًا عَبْدُهُ وَرَسُولُهُ",
+
+hi:
+"मैं गवाही देता हूँ कि अल्लाह के सिवा कोई माबूद नहीं, वह अकेला है, उसका कोई शरीक नहीं और मुहम्मद ﷺ उसके बंदे और रसूल हैं।",
+
+en:
+"I bear witness that there is no deity except Allah, alone without partner, and Muhammad ﷺ is His servant and Messenger."
+
+},
+
+{
+
+title:"3. कलिमा तम्जीद",
+
+ar:
+"سُبْحَانَ اللّٰهِ وَالْحَمْدُ لِلّٰهِ وَلَا إِلٰهَ إِلَّا اللّٰهُ وَاللّٰهُ أَكْبَرُ",
+
+hi:
+"अल्लाह पाक है, सारी तारीफ़ अल्लाह के लिए है, अल्लाह के सिवा कोई माबूद नहीं और अल्लाह सबसे बड़ा है।",
+
+en:
+"Glory be to Allah; praise belongs to Allah; there is no deity except Allah; Allah is the Greatest."
+
+},
+
+{
+
+title:"4. कलिमा तौहीद",
+
+ar:
+"لَا إِلٰهَ إِلَّا اللّٰهُ وَحْدَهُ لَا شَرِيكَ لَهُ لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ",
+
+hi:
+"अल्लाह के सिवा कोई माबूद नहीं। वह अकेला है, उसका कोई शरीक नहीं। उसी की बादशाहत और उसी के लिए तारीफ़ है।",
+
+en:
+"There is no deity except Allah, alone without partner. His is the dominion and His is the praise."
+
+},
+
+{
+
+title:"5. कलिमा इस्तिग़फ़ार",
+
+ar:
+"أَسْتَغْفِرُ اللّٰهَ رَبِّي مِنْ كُلِّ ذَنْبٍ أَذْنَبْتُهُ وَأَتُوبُ إِلَيْهِ",
+
+hi:
+"मैं अपने रब अल्लाह से अपने गुनाहों की माफी मांगता हूँ और उसकी तरफ तौबा करता हूँ।",
+
+en:
+"I seek forgiveness from Allah, my Lord, for my sins and I repent to Him."
+
+},
+
+{
+
+title:"6. कलिमा रद्द-ए-कुफ्र",
+
+ar:
+"اللّٰهُمَّ إِنِّي أَعُوذُ بِكَ مِنْ أَنْ أُشْرِكَ بِكَ شَيْئًا أَعْلَمُهُ وَأَسْتَغْفِرُكَ لِمَا لَا أَعْلَمُهُ",
+
+hi:
+"ऐ अल्लाह! मैं जानबूझकर किसी को तेरा शरीक बनाने से तेरी पनाह चाहता हूँ और अनजाने में हुई गलती की माफी चाहता हूँ।",
+
+en:
+"O Allah, I seek refuge in You from knowingly associating anything with You, and I seek Your forgiveness for what I do not know."
+
+}
+
+];
+
+
+function renderKalima(){
+
+document.getElementById(
+"kalimaContent"
+).innerHTML =
+
+kalimas.map(
+k=>`
+
+<div class="box">
+
+<h2>
+${safe(k.title)}
+</h2>
+
+<div class="arabic">
+${safe(k.ar)}
+</div>
+
+<div class="label">
+हिन्दी
+</div>
+
+<p class="hindi">
+${safe(k.hi)}
+</p>
+
+<div class="label">
+ENGLISH
+</div>
+
+<p class="english">
+${safe(k.en)}
+</p>
+
+</div>
+
+`
+).join("");
+
+}
+
+
+
+/* =========================================
+   START
+========================================= */
+
+createJuzButtons();
+
+renderKalima();
+
+initSurahs();
+
+</script>
+
+</body>
+</html>
